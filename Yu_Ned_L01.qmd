@@ -1,8 +1,8 @@
 ---
 title: "L01 Review"
 subtitle: "Data Science 3 with R (STAT 301-3)"
-author: "YOUR NAME"
-pagetitle: "L01 YOUR NAME"
+author: "Ned Yu"
+pagetitle: "L01 Ned Yu"
 date: today
 
 format:
@@ -28,7 +28,7 @@ citation-location: margin
 
 To link to your github **repo**sitory, appropriately edit the example link below. Meaning replace `https://your-github-repo-url` with your github repo url. Suggest verifying the link works before submitting.
 
-[https://your-github-repo-url](https://your-github-repo-url)
+[Ned's GitHub Repository](https://github.com/stat301-3-2026-spring/l01-review-nedyu119.git)
 :::
 
 ## Overview
@@ -46,7 +46,12 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+* Find a dataset and find a target variable of interest. Establish a research question (ex. decide between inferential vs predictive models).
+* Use EDA and establish predictors of interest.
+* Split the data into training and testing data (choose a ratio depending what you've defined).
+* Define recipes for each model you plan on using, and create a workflow for each.
+* Identify hyperparameters of interest for each model
+* Set up a resampling process (ex. v-fold cross validation, bootstrap) and split the training data accordingly.
 
 :::
 
@@ -57,7 +62,6 @@ Explain the difference between supervised and unsupervised learning.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
 
 :::
 
