@@ -26,9 +26,8 @@ citation-location: margin
 ::: {.callout-tip icon="false"}
 ## Github Repo Link
 
-To link to your github **repo**sitory, appropriately edit the example link below. Meaning replace `https://your-github-repo-url` with your github repo url. Suggest verifying the link works before submitting.
 
-[Ned's GitHub Repository](https://github.com/stat301-3-2026-spring/l01-review-nedyu119.git)
+[Ned's L01 GitHub Repository](https://github.com/stat301-3-2026-spring/l01-review-nedyu119.git)
 :::
 
 ## Overview
@@ -46,12 +45,16 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 ::: {.callout-tip icon="false"}
 ## Solution
 
-* Find a dataset and find a target variable of interest. Establish a research question (ex. decide between inferential vs predictive models).
-* Use EDA and establish predictors of interest.
+* Find a dataset and find a target variable of interest. Establish a research question (ex. decide between inferential vs predictive models) and determine if this is a classification/regression problem.
+* Use EDA and establish predictors of interest and see if there are any relationships that could be useful to look into. Also clean the data.
 * Split the data into training and testing data (choose a ratio depending what you've defined).
-* Define recipes for each model you plan on using, and create a workflow for each.
+* Define recipes for each model you plan on using, and create a workflow that incorporates those recipes for each.
 * Identify hyperparameters of interest for each model
-* Set up a resampling process (ex. v-fold cross validation, bootstrap) and split the training data accordingly.
+* Set up a resampling process (ex. v-fold cross validation, bootstrap) and partition the training data accordingly.
+* Compare model performances on the resamples using some metric (it depends on the problem; for example, you can use ROC AUC for classification problems), select the best model to use on the testing set, and identify the optimal hyperparameters for that model.
+* Fit the final model to the entire training set using the optimal hyperparameters identified.
+* Run the final model on the testing dataset and evaluate its performance using the relevant metric. 
+
 
 :::
 
@@ -61,6 +64,10 @@ Explain the difference between supervised and unsupervised learning.
 
 ::: {.callout-tip icon="false"}
 ## Solution
+
+* Supervised learning means that we will use a labeled target variable of our interest to guide our model (using the observations present). 
+
+* In unsupervised learning, there isn't a target variable that guides the model. The goal of this is to look at the structure of the dataset and other patterns/groupings within the data. There isn't really a "right answer" that we're looking for. PCA is an example of this.
 
 
 :::
@@ -74,8 +81,7 @@ In general, we can classify a model by its purpose into 1 of the 3 categories be
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+The goal of a descriptive model is to describe the structure in the data and present/show any trends.
 :::
 
 #### Inferential Models
@@ -83,7 +89,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+The goal of an inferential model is to test a hypothesis and establish how and why variables influence each other. It's focused on how these patterns can be generalized and/or represent a cause-and-effect relationship. For example, seeing how morbidity is related to vaccination rate. Many inferential models use parametric models because they can show whether some variable `A` causes some change in variable `B`.  
 
 :::
 
@@ -92,8 +98,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+The goal of a predictive model is to make a prediction about a target variable using variables on new, unseen data. This prediction should minimize prediction error. An example of a problem for a predictive model can be predicting political affiliation.
 :::
 
 ### Question 4 
@@ -107,8 +112,7 @@ What does it mean to be a mechanistic model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+Mechanistic models (parametric) utilize assumptions (ex. the predictors have a linear relationship to the target variable) and are explainable. This is nice because it saves a lot of time due to simplicity. However, if the assumptions don't work, the model will be bad due to high bias. 
 :::
 
 #### Part (b)
@@ -118,7 +122,7 @@ What does it mean to be an empirically driven model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Empirically driven models are data-driven and more flexible (ex. tree-based models). Rather than making assumptions, the data dictates the model choice and the model learns the shape of the relationship from the data.
 
 :::
 
@@ -129,7 +133,9 @@ How does the mechanistic and empirically driven model terminology relate to the 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Mechanistic models are effectively synonymous with parametric models because they follow some fixed format (ex. being constrained to being a linear model) and thus their complexity is fixed regardless of how much data is in the dataset.
+
+Empirically driven models are effectively synonymous with nonparametric models because they don't have a fixed format and will grow in complexity when there is more data in the dataset.
 
 :::
 
@@ -140,8 +146,7 @@ In general, is a mechanistic or empirically driven model easier to interpret? Ex
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+Mechanistic models are easier to interpret because the assumptions used already tell us the nature of the relationship between the predictors and target variable.
 :::
 
 #### Part (e)
@@ -151,8 +156,7 @@ How does mechanistic and empirically driven model terminology relate to the idea
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+Empirically driven models are generally more flexible than mechanistic models because it learns the relationships through the dataset itself instead of utilizing an assumption that we make.
 :::
 
 #### Part (f)
@@ -162,8 +166,7 @@ Describe the bias-variance trade-off when considering the use of a mechanistic o
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+The use of a mechanistic model over an empirically driven model generally will increase bias because the model is usually simpler. Consequently, the mechanistic model will likely have less variance in comparison to the empirically driven model (due to having higher bias and less complexity).
 :::
 
 ### Question 5 
@@ -173,7 +176,9 @@ Explain the difference between a regression and classification machine learning 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+* Regression problems involve using a continuous variable as the response/target variable. For example, predicting the shooting percentage of an NBA player.
+
+* Classification problems involve using a categorical/discrete variable as the response/target variable. For example, predicting which team wins the NBA finals.
 
 :::
 
@@ -184,7 +189,10 @@ When splitting the data, why is it useful to stratify by the outcome/target vari
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+It's important to stratify data splits by the target variable because it's possible that the values of the target variables get split unevenly between the training and testing data. If the split is very uneven, it could severely impact the model's performance. It's also useful for imbalanced datasets.
+
+For example, let's say that our target variable is the identity of a fruit consisting of 400 apples and 100 oranges. Let's say that 80% of the observations of the target variable will be allocated to the training data, and the remaining 20% will be allocated to the testing data. It is entirely possible that all 400 observations corresponding to "apple" are put in the training data and all 100 observations corresponding to "orange" are put in the testing data. By stratifying by our target variable, we ensure that these observations will be split fairly (resulting in 320 observations of "apple" and 80 observations of "orange" in the training set).
+
 
 :::
 
@@ -195,7 +203,9 @@ Briefly describe how v-fold cross validation with repeats is used to estimate te
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+V-fold cross validation is a method where the training data is split into `v` segments (folds) (designated by the user). `v-1` folds are used as "training data" which the model is fit to, and the remaining fold is used as "testing data" to evaluate performance using RMSE This process rotates through all `v` folds until each has been used as the test set. This entire process is then repeated for some designated number of repeats. The RMSE value calculated for each fold are then averaged together to produce a final performance estimate.
+
+We use v-fold cross-validation to give ourselves the opportunity to test every training data point in our dataset in order to get a more stable estimate of the model's performance (by avoiding the probability of basing the evaluation on one lucky training/testing split). This reduces the variance of the model's performance estimate on the target variable.
 
 :::
 
@@ -206,7 +216,7 @@ When might we use a bootstrap resampling procedure instead of v-fold cross valid
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Bootstrap draws random samples with replacement from the training data, with each sample being the same size as the original dataset. Therefore, it would probably be better to use it over v-fold cross validation when handling *small datasets with few observations*. This is because you won't have enough observations to partition across folds.
 
 :::
 
@@ -217,8 +227,7 @@ Briefly describe model tuning and why we use it.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+Model tuning effectively is a method that tries combinations of hyperparameters (often specified using a tuning grid) for a model, and then evaluates the performance of each combination on the dataset. We use it because it lets us find the hyperparameter combination that configures our model to give the best performance. 
 :::
 
 ### Question 10 
@@ -228,8 +237,7 @@ What are two common performance metrics when dealing with a regression ML proble
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+RMSE (root mean squared error) and R-squared. 
 :::
 
 What are two common performance metrics when dealing with a classification ML problem?
@@ -237,8 +245,7 @@ What are two common performance metrics when dealing with a classification ML pr
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+Accuracy and ROC AUC.
 :::
 
 ### Question 11
@@ -252,8 +259,7 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+This is an inferential problem 
 :::
 
 2. How likely is it that a customer will churn in the next month (leave the company/drop the service)?
