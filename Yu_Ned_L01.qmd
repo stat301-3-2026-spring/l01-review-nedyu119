@@ -49,7 +49,7 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 * Use EDA and establish predictors of interest and see if there are any relationships that could be useful to look into. Also clean the data.
 * Split the data into training and testing data (choose a ratio depending what you've defined).
 * Define recipes for each model you plan on using, and create a workflow that incorporates those recipes for each.
-* Identify hyperparameters of interest for each model
+* Identify hyperparameters of interest for each model.
 * Set up a resampling process (ex. v-fold cross validation, bootstrap) and partition the training data accordingly.
 * Compare model performances on the resamples using some metric (it depends on the problem; for example, you can use ROC AUC for classification problems), select the best model to use on the testing set, and identify the optimal hyperparameters for that model.
 * Fit the final model to the entire training set using the optimal hyperparameters identified.
@@ -135,7 +135,7 @@ How does the mechanistic and empirically driven model terminology relate to the 
 
 Mechanistic models are effectively synonymous with parametric models because they follow some fixed format (ex. being constrained to being a linear model) and thus their complexity is fixed regardless of how much data is in the dataset.
 
-Empirically driven models are effectively synonymous with nonparametric models because they don't have a fixed format and will grow in complexity when there is more data in the dataset.
+Empirically driven models are effectively synonymous with nonparametric models because they don't have a fixed format and potentially can grow in complexity when there is more data in the dataset.
 
 :::
 
@@ -203,7 +203,7 @@ Briefly describe how v-fold cross validation with repeats is used to estimate te
 ::: {.callout-tip icon="false"}
 ## Solution
 
-V-fold cross validation is a method where the training data is split into `v` segments (folds) (designated by the user). `v-1` folds are used as "training data" which the model is fit to, and the remaining fold is used as "testing data" to evaluate performance using RMSE This process rotates through all `v` folds until each has been used as the test set. This entire process is then repeated for some designated number of repeats. The RMSE value calculated for each fold are then averaged together to produce a final performance estimate.
+V-fold cross validation is a method where the training data is split into `v` segments (folds) (designated by the user). `v-1` folds are used as "training data" which the model is fit to, and the remaining fold is used as "testing data" to evaluate performance using RMSE. This process rotates through all `v` folds until each has been used as the test set. This entire process is then repeated for some designated number of repeats. The RMSE values calculated for each fold are then averaged together to produce a final performance estimate.
 
 We use v-fold cross-validation to give ourselves the opportunity to test every training data point in our dataset in order to get a more stable estimate of the model's performance (by avoiding the probability of basing the evaluation on one lucky training/testing split). This reduces the variance of the model's performance estimate on the target variable.
 
@@ -245,7 +245,7 @@ What are two common performance metrics when dealing with a classification ML pr
 ::: {.callout-tip icon="false"}
 ## Solution
 
-Accuracy and ROC AUC.
+Accuracy and ROC-AUC (receiver operating characteristic -- area under curve).
 :::
 
 ### Question 11
@@ -259,7 +259,7 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ::: {.callout-tip icon="false"}
 ## Solution
 
-This is an inferential problem 
+This is an inferential problem because they're trying to establish a relationship between high numbers of service calls and probability of a customer to leave.
 :::
 
 2. How likely is it that a customer will churn in the next month (leave the company/drop the service)?
@@ -267,7 +267,6 @@ This is an inferential problem
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+This is a prediction problem because they are trying to anticipate an outcome (the probability of the customer leaving) that they don't know using the individual observations that they have. They're not emphasizing why this outcome occurs; they just want to know what *is* the outcome.
 :::
 

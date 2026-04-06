@@ -2279,7 +2279,7 @@ vertical-align: -.125em;
 <li>Use EDA and establish predictors of interest and see if there are any relationships that could be useful to look into. Also clean the data.</li>
 <li>Split the data into training and testing data (choose a ratio depending what you’ve defined).</li>
 <li>Define recipes for each model you plan on using, and create a workflow that incorporates those recipes for each.</li>
-<li>Identify hyperparameters of interest for each model</li>
+<li>Identify hyperparameters of interest for each model.</li>
 <li>Set up a resampling process (ex. v-fold cross validation, bootstrap) and partition the training data accordingly.</li>
 <li>Compare model performances on the resamples using some metric (it depends on the problem; for example, you can use ROC AUC for classification problems), select the best model to use on the testing set, and identify the optimal hyperparameters for that model.</li>
 <li>Fit the final model to the entire training set using the optimal hyperparameters identified.</li>
@@ -2411,7 +2411,7 @@ vertical-align: -.125em;
 </div>
 <div class="callout-body-container callout-body">
 <p>Mechanistic models are effectively synonymous with parametric models because they follow some fixed format (ex. being constrained to being a linear model) and thus their complexity is fixed regardless of how much data is in the dataset.</p>
-<p>Empirically driven models are effectively synonymous with nonparametric models because they don’t have a fixed format and will grow in complexity when there is more data in the dataset.</p>
+<p>Empirically driven models are effectively synonymous with nonparametric models because they don’t have a fixed format and potentially can grow in complexity when there is more data in the dataset.</p>
 </div>
 </div>
 </section>
@@ -2518,7 +2518,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>V-fold cross validation is a method where the training data is split into <code>v</code> segments (folds) (designated by the user). <code>v-1</code> folds are used as “training data” which the model is fit to, and the remaining fold is used as “testing data” to evaluate performance using RMSE This process rotates through all <code>v</code> folds until each has been used as the test set. This entire process is then repeated for some designated number of repeats. The RMSE value calculated for each fold are then averaged together to produce a final performance estimate.</p>
+<p>V-fold cross validation is a method where the training data is split into <code>v</code> segments (folds) (designated by the user). <code>v-1</code> folds are used as “training data” which the model is fit to, and the remaining fold is used as “testing data” to evaluate performance using RMSE. This process rotates through all <code>v</code> folds until each has been used as the test set. This entire process is then repeated for some designated number of repeats. The RMSE values calculated for each fold are then averaged together to produce a final performance estimate.</p>
 <p>We use v-fold cross-validation to give ourselves the opportunity to test every training data point in our dataset in order to get a more stable estimate of the model’s performance (by avoiding the probability of basing the evaluation on one lucky training/testing split). This reduces the variance of the model’s performance estimate on the target variable.</p>
 </div>
 </div>
@@ -2584,7 +2584,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Accuracy and ROC AUC.</p>
+<p>Accuracy and ROC-AUC (receiver operating characteristic – area under curve).</p>
 </div>
 </div>
 </section>
@@ -2605,7 +2605,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is an inferential problem</p>
+<p>This is an inferential problem because they’re trying to establish a relationship between high numbers of service calls and probability of a customer to leave.</p>
 </div>
 </div>
 <ol start="2" type="1">
@@ -2621,7 +2621,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>This is a prediction problem because they are trying to anticipate an outcome (the probability of the customer leaving) that they don’t know using the individual observations that they have. They’re not emphasizing why this outcome occurs; they just want to know what <em>is</em> the outcome.</p>
 </div>
 </div>
 </section>
