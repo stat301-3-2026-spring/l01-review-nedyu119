@@ -4,8 +4,8 @@ This lab contains a series of questions meant to review machine learning/predict
 
 Ideally, students will be able to answer these things without having to look things up. Think of these as interview questions for a data scientist/analyst position.
 
-## Instructions
+## File information
 
-After creating your own github repository and connecting it to your RStudio, you should work through the questions provided in `LO1_review.html`. A template is provided (rename as `Lastname_Firstname_L01.qmd`).
+* **`Yu_Ned_L01.qmd`**: a .qmd file of the assignment. All of my responses are typed in there.
 
-You will only need to submit the rendered html file which should contain a link to your github repo. Including the github repo link takes the place of having to submit the additional qmd and r files. See canvas for submission details.
+* **`LO1_review.html` **: the rendered .html file based on the .qmd file which I submitted to Canvas.
